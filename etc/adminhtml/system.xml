@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bluethinkinc" translate="label" sortOrder="110">
+            <label>Bluethinkinc</label>
+        </tab>
+        <section id="questiontab"
+        translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Cancel Order Reasons</label>
+            <tab>bluethinkinc</tab>
+            <resource>Bluethinkinc_CancelOrder::Configration</resource>
+            <group id="dynamic_field_group"
+                translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Add More Reasons</label>
+                <field id="dynamic_field"
+                translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Reasons</label>
+                    <backend_model>Bluethinkinc\CancelOrder\Config\Backend\ArraySerialized</backend_model>
+                    <frontend_model>Bluethinkinc\CancelOrder\Block\Adminhtml\Config\Form\Field\DField</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

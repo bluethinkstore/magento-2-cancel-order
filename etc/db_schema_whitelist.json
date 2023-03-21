@@ -1,0 +1,14 @@
+{
+    "cancel_order_reason": {
+        "column": {
+            "id": true,
+            "order_id": true,
+            "order_status_by_customer": true,
+            "order_status_by_admin": true,
+            "reason": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

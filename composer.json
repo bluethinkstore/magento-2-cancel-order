@@ -1,0 +1,21 @@
+{
+    "name": "bluethinkinc/magento-2-cancel-order",
+    "description": "This extension is used to create cancel order request.",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "bluethinkinc",
+            "email": "ritikbluethink0@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "BluethinkInc\\CancelOrder\\": ""
+        }
+    }
+}

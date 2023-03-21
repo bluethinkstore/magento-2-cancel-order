@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Bluethinkinc_CancelOrder::css/cancelblock.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Bluethinkinc\CancelOrder\Block\Adminhtml\Order\View\View"
+            name="salescustomblock" template="Bluethinkinc_CancelOrder::view_order.phtml"/>
+        </referenceContainer>
+        <move element="salescustomblock" destination="content" before="-"/>
+    </body>
+</page>

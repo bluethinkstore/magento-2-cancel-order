@@ -1,0 +1,45 @@
+<?php
+/**
+ * @var $block \Bluethinkinc\CancelOrder\Block\Adminhtml\Order\View\View
+ */
+$orderId = $block->getOrderId();
+$reason = $block->getReason($orderId);
+?>
+<?php if ($block->isOrderCancel($reason)):?>
+   <div>
+      <h2><?= $block->escapeHtml(__('Order Cancel')) ?></h2>
+      <hr>
+   </div>
+   <table class="data-table admin__table-primary edit-order-table" id="my-orders-table">
+      <thead>
+         <tr>
+            <th scope="col" class="col name"><?= $block->escapeHtml(__('Reason')) ?></th>
+            <th scope="col" class="col email"><?= $block->escapeHtml(__('Action')) ?></th>
+         </tr>
+      </thead>
+      <input name="form_key" type="hidden" value="<?= $block->escapeHtml($block->getFormKey()); ?>">
+      <tbody>
+        <?php if ($block->getStatusOfOrder() === "canceled"): ?>
+          <tr>
+            <td data-th="<?= $block->escapeHtml(__('Reason')) ?>" class="product-title">
+                  <?=$block->escapeHtml(__($reason->getReason())) ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('Action')) ?>" class="product-title">
+                <p><?= $block->escapeHtml(__('This order has been cancelled')) ?></p>
+            </td>
+        </tr>
+          <?php else:?>
+          <tr>
+              <td data-th="<?= $block->escapeHtml(__('Reason')) ?>" class="product-title">
+                <?= $block->escapeHtml(__($reason->getReason()))  ?>
+            </td>
+            <td data-th="<?= $block->escapeHtml(__('Action')) ?>" class="product-title">
+               <?php /** phpcs:disable */ ?>
+                  <?= $block->acceptCancelOrderUrl($reason)?>/<?=$block->denyCancelOrderUrl($reason)?>
+               <?php /** phpcs:enable */ ?>
+            </td>
+            <?php endif;?>
+        </tr>
+      </tbody>
+   </table>
+<?php endif; ?>

@@ -1,0 +1,21 @@
+<?php
+/**
+ * @var Bluethinkinc\CancelOrder\Block\Adminhtml\Order\View\View $block
+ **/
+$orderId = $block->getOrderId();
+$reason = $block->getReason($orderId);
+?>
+<?php if (!empty($block->getOrderStatus($reason))):?>
+ <fieldset class="cancleorder">
+    <legend><?= $block->escapeHtml(__('Cancel Order Status:')) ?></legend>
+    <div>
+        <?php if ($block->getOrderStatus($reason) === "processing"):?>
+            <h3><?= $block->escapeHtml(__('Wait for admin approval')) ?></h3>
+            <?php elseif ($block->getOrderStatus($reason) === "rejected"):?>
+                <h3><?= $block->escapeHtml(__("Sorry, You can't cancel the order at this moment")) ?></h3>
+                <?php else:?>
+                    <h3><?= $block->escapeHtml(__('Your order has been cancelled')) ?></h3>
+        <?php endif?>
+    </div>
+</fieldset>
+<?php endif?>
