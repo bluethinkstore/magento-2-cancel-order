@@ -4,7 +4,7 @@
     "type": "magento2-module",
     "authors": [
         {
-            "name": "bluethinkinc",
+            "name": "bluethinkinc"
         }
     ],
     "minimum-stability": "dev",
