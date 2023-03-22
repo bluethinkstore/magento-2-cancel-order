@@ -44,7 +44,7 @@ class Provider
     public function __construct(
         ScopeConfigInterface $scopeConfig,
         StoreManagerInterface $storeManager,
-        Json $serialize,
+        Json $serialize
     ) {
         $this->scopeConfig = $scopeConfig;
         $this->storeManager = $storeManager;

@@ -21,6 +21,11 @@ class Index extends Action
     private const CANCELLED = 'cancelled';
 
     /**
+     * @var OrderManagementInterface
+     */
+    private $orderManagement;
+
+    /**
      * @var PostFactory
      */
     private $postFactory;

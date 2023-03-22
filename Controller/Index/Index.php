@@ -32,6 +32,11 @@ class Index implements HttpPostActionInterface
     protected $postFactory;
 
     /**
+     * @var RequestInterface
+     */
+    protected $request;
+
+    /**
      * @param PageFactory $pageFactory
      * @param PostFactory $postFactory
      * @param RequestInterface $request

@@ -57,7 +57,7 @@ $viewModel = $block->getData('viewModel');
                                     <span><?=$block->escapeHtml(__('View Status')) ?></span>
                                 </a>
                                 <?php else: ?>
-                                    <?php if ($_order->getStatus() !== 'cancelled'
+                                    <?php if ($_order->getStatus() !== 'canceled'
                                     && $_order->getStatus() !== 'complete'):?>
                                         <a href="#" class="click-me"
                                         id="<?= $block->escapeHtml(__($_order->getId()))?>">
