@@ -2,13 +2,14 @@
     "name": "bluethinkinc/magento-2-cancel-order",
     "description": "This extension is used to create cancel order request.",
     "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "proprietary",
     "authors": [
         {
             "name": "bluethinkinc"
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
     "autoload": {
         "files": [
             "registration.php"
